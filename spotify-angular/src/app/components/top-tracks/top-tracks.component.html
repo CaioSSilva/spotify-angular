@@ -1,0 +1,9 @@
+<div class="card" *ngFor="let albuns of artistAlbuns">
+  <div class="flex">
+    <img [src]="albuns.imageURL" alt="Cover" />
+    <div class="album-info">
+      <h1>{{ albuns.title }}</h1>
+      <p>{{ topArtist.name }}</p>
+    </div>
+  </div>
+</div>

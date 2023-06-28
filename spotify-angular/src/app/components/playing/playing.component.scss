@@ -1,0 +1,52 @@
+@import "variables.scss";
+
+.card {
+  flex-direction: column;
+  padding: 20px;
+
+  h1,
+  p {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  h1 {
+    color: $white;
+    font-size: 1.2rem;
+  }
+  p {
+    color: $white-transparent-70;
+    font-size: 0.8rem;
+    cursor: pointer;
+
+    &:hover {
+      color: $white-transparent-90;
+    }
+  }
+  .music-controls {
+    justify-content: space-around;
+    align-items: center;
+
+    .play{
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+    }
+
+    button {
+      width: 20%;
+      height: 30px;
+      border-radius: 5px;
+      background-color: $primary-color;
+      color: $white;
+      outline: none;
+      border: 0;
+      cursor: pointer;
+      font-size: 1.1rem;
+      &:hover {
+        background-color: $primary-color-hover;
+      }
+    }
+  }
+}

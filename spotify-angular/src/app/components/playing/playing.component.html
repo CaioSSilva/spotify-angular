@@ -1,0 +1,20 @@
+<div class="card flex">
+  <img [src]="actualMusic.album.imageURL" alt="Cover" />
+
+  <div class="muisc-info">
+    <h1>{{ actualMusic.title }}</h1>
+    <p>{{ getArtists(actualMusic) }}</p>
+  </div>
+
+  <div class="music-controls flex mt-2">
+    <button class="previous" (click)="previousMusic()">
+      <fa-icon [icon]="previousIcon"></fa-icon>
+    </button>
+    <button  class="play" (click)="playingMusic(actualMusic)">
+      <fa-icon [icon]="isPlaying ? pauseIcon : playIcon"></fa-icon>
+    </button>
+    <button class="next" (click)="nextMusic()">
+      <fa-icon [icon]="nextIcon"></fa-icon>
+    </button>
+  </div>
+</div>

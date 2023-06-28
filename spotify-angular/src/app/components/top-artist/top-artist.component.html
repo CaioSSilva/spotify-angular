@@ -1,0 +1,11 @@
+<div class="card p-20">
+  <div class="artist flex">
+    <span class="title-bg">{{ topArtist.name }}</span>
+  </div>
+  <div
+    class="image"
+    [ngStyle]="{ 'background-image': 'url(' + topArtist.imageURL + ')' }"
+  ></div>
+</div>
+
+<app-top-tracks></app-top-tracks>
