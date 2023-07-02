@@ -55,9 +55,16 @@ export class HomeComponent {
   }
 
   async getLikedSongs() {
+
+    clearTimeout(this.timerId);
+
     this.musics = await this.spotify.getLikedSongs(this.offset, this.limit);
     this.tracksNumber = await this.spotify.getLikedSongsTotal();
     this.tracksNumberConvert = Math.floor(this.tracksNumber / 50);
+
+    this.timerId = setInterval(async () => {
+      await this.getLikedSongs();
+    }, 1000);
   }
 
   nextPage() {

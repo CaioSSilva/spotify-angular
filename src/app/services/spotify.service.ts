@@ -20,6 +20,7 @@ import { IAlbum } from "../models/IAlbum";
 export class SpotifyService {
   spotifyApi: Spotify.SpotifyWebApiJs;
   user: IUser | undefined;
+  timerId: any = null;
 
   constructor() {
     this.spotifyApi = new Spotify();
@@ -122,7 +123,7 @@ export class SpotifyService {
       this.logOut();
     }
   }
-  async musicToggle(musicUri: string) {
+  async musicToggle() {
     if (await this.getActualMusicState()) {
       this.pauseMusic();
     } else {

@@ -51,8 +51,8 @@ export class PlayingComponent {
     await this.spotify.nextMusic();
   }
 
-  async playingMusic(music: IMusic) {
-    await this.spotify.musicToggle(music.uri);
+  async playingMusic() {
+    await this.spotify.musicToggle();
     this.getMusicState()
   }
   async getMusicState() {
