@@ -81,7 +81,7 @@ $h-playlists: calc($h-spotify-logo + $h-menu-options );
     width: 100%;
   }
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1300px) {
   :host{
     display: none;
   }
