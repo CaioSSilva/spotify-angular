@@ -1,21 +1,21 @@
-import { Injectable } from '@angular/core';
-import Spotify from 'spotify-web-api-js';
-import { IUser } from '../models/IUser';
+import { Injectable } from "@angular/core";
+import Spotify from "spotify-web-api-js";
+import { IUser } from "../models/IUser";
 import {
   SpotifyAmbumToModel,
   SpotifyArtistToModel,
   SpotifyMusicToModel,
   SpotifyPlaylistToModel,
   SpotifyUserToModel,
-} from '../Common/spotifyHelper';
-import { IPlaylist } from '../models/IPlaylist';
-import { SpotifyConfigs } from '../app.component';
-import { IArtist } from '../models/IArtist';
-import { IMusic } from '../models/IMusic';
-import { IAlbum } from '../models/IAlbum';
+} from "../Common/spotifyHelper";
+import { IPlaylist } from "../models/IPlaylist";
+import { SpotifyConfigs } from "../app.component";
+import { IArtist } from "../models/IArtist";
+import { IMusic } from "../models/IMusic";
+import { IAlbum } from "../models/IAlbum";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class SpotifyService {
   spotifyApi: Spotify.SpotifyWebApiJs;
@@ -28,7 +28,7 @@ export class SpotifyService {
   async initializeUser() {
     if (this.user) return true;
 
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem("token");
 
     if (!token) return false;
 
@@ -51,21 +51,21 @@ export class SpotifyService {
     const authEndpoint = `${SpotifyConfigs.endpointAuth}?`;
     const clientId = `client_id=${SpotifyConfigs.clientId}&`;
     const redirectUrl = `redirect_uri=${SpotifyConfigs.redirectURI}&`;
-    const scopes = `scope=${SpotifyConfigs.scopes.join('%20')}&`;
+    const scopes = `scope=${SpotifyConfigs.scopes.join("%20")}&`;
     const responseType = `response_type=token&show_dialog=true`;
     return authEndpoint + clientId + redirectUrl + scopes + responseType;
   }
 
   getToken() {
-    if (!window.location.hash) return '';
+    if (!window.location.hash) return "";
 
-    const params = window.location.hash.substring(1).split('&');
-    return params[0].split('=')[1];
+    const params = window.location.hash.substring(1).split("&");
+    return params[0].split("=")[1];
   }
 
   setToken(token: string) {
     this.spotifyApi.setAccessToken(token);
-    localStorage.setItem('token', token);
+    localStorage.setItem("token", token);
   }
 
   async getUserPlaylists(offset = 0, limit = 50): Promise<IPlaylist[]> {
@@ -130,8 +130,18 @@ export class SpotifyService {
     }
   }
 
+  async shuffleToggle(state: boolean) {
+    await this.spotifyApi.setShuffle(state);
+  }
+
+  async repeatToggle(state: string) {
+    await this.spotifyApi.setRepeat(<SpotifyApi.PlaybackRepeatState>state);
+  }
+  async setVolume(percent: number) {
+    await this.spotifyApi.setVolume(percent);
+  }
   logOut() {
     localStorage.clear();
-    window.location.href = '/login';
+    window.location.href = "/login";
   }
 }

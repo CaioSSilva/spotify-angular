@@ -32,7 +32,7 @@ export function newMusic(): IMusic {
   return {
     id: '',
     uri: '',
-    title: 'Please open Spotify...',
+    title: 'Play Something...',
     artists: [{ name: 'Spotify', id: 'ghdgshdfg2we7e' }],
     album: {
       id: '',

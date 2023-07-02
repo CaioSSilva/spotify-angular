@@ -2,15 +2,19 @@
 :host {
   display: block;
   width: 100%;
+  white-space: nowrap;
 
   button {
-    width: 100%;
+    gap: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border: 0;
-    padding: 10px 0px 10px 20px;
+    padding: 8px 0px 8px 8px;
     border-radius: 5px;
     text-align: left;
     font-weight: 600;
-    font-size: .8rem;
+    font-size: 0.8rem;
     cursor: pointer;
 
     span {
@@ -18,12 +22,11 @@
       vertical-align: middle;
       width: 150px;
       white-space: nowrap;
-      margin-left: 15px;
       overflow: hidden;
       text-overflow: ellipsis;
     }
 
-    color:$white;
+    color: $white;
     background-color: transparent;
 
     &.selected {

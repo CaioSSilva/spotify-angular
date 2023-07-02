@@ -1,15 +1,15 @@
 export interface IMusic {
-  id: string,
-  uri:string,
-  title: string,
+  id: string;
+  uri: string;
+  title: string;
   artists: {
-    id: string,
-    name: string
-  }[],
+    id: string;
+    name: string;
+  }[];
   album: {
-    id: string,
-    name: string,
-    imageURL: string
-  },
-  duration:string
+    id: string;
+    name: string;
+    imageURL: string;
+  };
+  duration: string;
 }

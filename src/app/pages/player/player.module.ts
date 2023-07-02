@@ -13,6 +13,7 @@ import { RightPanelComponent } from 'src/app/components/right-panel/right-panel.
 import { SearchComponent } from 'src/app/components/search/search.component';
 import { PlayingComponent } from 'src/app/components/playing/playing.component';
 import { TopTracksComponent } from 'src/app/components/top-tracks/top-tracks.component';
+import { AuxBarComponent } from 'src/app/components/aux-bar/aux-bar.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { TopTracksComponent } from 'src/app/components/top-tracks/top-tracks.com
     SearchComponent,
     PlayingComponent,
     TopTracksComponent,
+    AuxBarComponent
   ],
   imports: [
     CommonModule,

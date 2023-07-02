@@ -37,7 +37,7 @@
         [selected]="selectedMenu === playlist.id"
         (click)="clickButton(playlist.id)"
       >
-        <fa-icon [icon]="playlistIcon"></fa-icon>
+        <img style="width: 30px;" [src]="playlist.imageURL" alt="">
       </app-menu-button>
     </div>
   </div>
