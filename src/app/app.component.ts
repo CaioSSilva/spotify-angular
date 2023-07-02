@@ -11,7 +11,7 @@ export class AppComponent {
 export const SpotifyConfigs = {
   clientId: 'e3d2c7e6cf56421cbe3ecc20998fc874',
   endpointAuth: 'https://accounts.spotify.com/authorize',
-  redirectURI: 'http://localhost:4200/login/',
+  redirectURI: 'https://angularfy.netlify.app/login',
   scopes: [
     'user-read-currently-playing',
     'user-read-recently-played',
