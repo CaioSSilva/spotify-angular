@@ -17,16 +17,14 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "allowedCommonJsDependencies": [
-              "spotify-web-api-js"
-            ],
+            "allowedCommonJsDependencies": ["spotify-web-api-js"],
             "outputPath": "dist/spotify-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/favicon.ico", "src/assets"],
+            "assets": ["src/favicon.ico", "src/assets", "src/_redirects"],
             "styles": ["src/styles.scss"],
             "scripts": [],
             "stylePreprocessorOptions": {
