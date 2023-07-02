@@ -4,7 +4,9 @@ import {
   faArrowRight,
   faHome,
   faMusic,
+  faHeart as liked
 } from '@fortawesome/free-solid-svg-icons';
+import { faHeart as notLiked } from '@fortawesome/free-regular-svg-icons';
 import { IMusic } from 'src/app/models/IMusic';
 import { SpotifyService } from 'src/app/services/spotify.service';
 import { PlayerService } from 'src/app/services/player.service';
@@ -36,7 +38,9 @@ export class HomeComponent {
   arrowLeftIcon = faArrowLeft;
   arrowRightIcon = faArrowRight;
   musicIcon = faMusic;
-  homeIcon  = faHome
+  homeIcon  = faHome;
+  likedIcon = liked;
+  notLikedIcon  = notLiked;
   constructor(private spotify: SpotifyService, private play: PlayerService) {
     this.getLikedSongs();
     this.getActualMusic();
@@ -64,7 +68,7 @@ export class HomeComponent {
 
     this.timerId = setInterval(async () => {
       await this.getLikedSongs();
-    }, 1000);
+    }, 5000);
   }
 
   nextPage() {
@@ -90,5 +94,8 @@ export class HomeComponent {
   async playMusic(music: IMusic) {
     await this.spotify.playMusic(music.uri);
     this.play.setActualMusic(music);
+  }
+  async dislike(music : IMusic){
+    await this.spotify.dislike(music)
   }
 }

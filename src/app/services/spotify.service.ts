@@ -141,6 +141,9 @@ export class SpotifyService {
   async setVolume(percent: number) {
     await this.spotifyApi.setVolume(percent);
   }
+  async dislike(music : IMusic){
+    //await this.spotifyApi.removeFromMySavedTracks(<string[]>[music.id])
+  }
   logOut() {
     localStorage.clear();
     window.location.href = "/login";

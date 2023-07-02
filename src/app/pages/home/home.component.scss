@@ -64,4 +64,14 @@
   .right-panel {
     height: 100vh;
   }
+  .like-button{
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+
+    fa-icon{
+      color: $primary-color;
+      font-size: 1rem !important;
+    }
+  }
 }
