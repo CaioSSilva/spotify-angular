@@ -6,9 +6,9 @@
   table-layout: fixed;
   border-collapse: collapse;
 
-  .play {
+  fa-icon {
     color: $primary-color;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 
   .executing {
@@ -27,7 +27,7 @@
         border-top-right-radius: 5px;
       }
     }
-    .play {
+    fa-icon {
       color: $white;
     }
   }
@@ -52,17 +52,15 @@
   }
 
   tr {
-    &:hover {
-      cursor: pointer;
-
-      td {
-        color: $white;
+    .title{
+      &:hover{
+        color: white;
+        cursor: pointer;
       }
     }
 
     td {
       padding: 10px 20px 10px 0px;
-      margin-top: 10px;
       font-weight: 500;
       font-size: 0.85rem;
       color: $white-transparent-70;
