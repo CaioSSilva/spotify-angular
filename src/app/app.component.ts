@@ -1,25 +1,25 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
-  title = 'spotify-angular';
+  title = "spotify-angular";
 }
 export const SpotifyConfigs = {
-  clientId: 'e3d2c7e6cf56421cbe3ecc20998fc874',
-  endpointAuth: 'https://accounts.spotify.com/authorize',
-  redirectURI: 'https://angularfy.netlify.app/login',
+  clientId: "319b66ec5be040259352baf95082d415",
+  endpointAuth: "https://accounts.spotify.com/authorize",
+  redirectURI: "http://localhost:4200/login",
   scopes: [
-    'user-read-currently-playing',
-    'user-read-recently-played',
-    'user-read-playback-state',
-    'user-top-read',
-    'user-modify-playback-state',
-    'user-library-read',
-    'playlist-read-private',
-    'playlist-read-collaborative',
+    "user-read-currently-playing",
+    "user-read-recently-played",
+    "user-read-playback-state",
+    "user-top-read",
+    "user-modify-playback-state",
+    "user-library-read",
+    "playlist-read-private",
+    "playlist-read-collaborative",
   ],
 };
