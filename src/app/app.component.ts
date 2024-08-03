@@ -11,7 +11,7 @@ export class AppComponent {
 export const SpotifyConfigs = {
   clientId: "319b66ec5be040259352baf95082d415",
   endpointAuth: "https://accounts.spotify.com/authorize",
-  redirectURI: "https://angularfy.netlify.app/login",
+  redirectURI: "https://spotify-angular-beige.vercel.app/login",
   scopes: [
     "user-read-currently-playing",
     "user-read-recently-played",
