@@ -62,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "spotify-angular:build:production"
+              "buildTarget": "spotify-angular:build:production"
             },
             "development": {
-              "browserTarget": "spotify-angular:build:development"
+              "buildTarget": "spotify-angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "spotify-angular:build"
+            "buildTarget": "spotify-angular:build"
           }
         },
         "test": {
